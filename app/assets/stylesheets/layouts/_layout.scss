@@ -1,0 +1,13 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-xs);
+  padding-right: var(--space-xs);
+  width: 100%;
+
+  @include tablet {
+    padding-right: var(--space-m);
+    padding-left: var(--space-m);
+    max-width: 60rem;
+  }
+}
