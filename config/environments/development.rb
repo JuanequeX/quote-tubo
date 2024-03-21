@@ -73,4 +73,11 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+  # Enable live reload in view, stylesheets and js files
+  config.hotwire_livereload.disable_default_listeners = true
+  config.hotwire_livereload.listen_paths = [
+    Rails.root.join("app/assets/stylesheets"),
+    Rails.root.join("app/views"),
+    Rails.root.join("app/javascript")
+  ]
 end
