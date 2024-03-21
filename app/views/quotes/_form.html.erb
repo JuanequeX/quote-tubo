@@ -8,5 +8,5 @@
   <% end %>
 
   <%= f.input :name, input_html: { autofocus: true } %>
-  <%= f.submit class: "btn btn--secondary" %>
+  <%= f.submit class: "btn btn--secondary", data: { turbo_method: "_top" } %>
 <% end %>
