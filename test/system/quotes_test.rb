@@ -5,33 +5,25 @@ class QuotesTest < ApplicationSystemTestCase
     @quote = quotes(:first) # Reference to the first fixture quote
   end
 
-  test "Creating a new quote" do
-    # When we visit the Quotes#index page
-    # we expect to see a title with the text "Quotes"
-    visit quotes_path
-    assert_selector "h1", text: "Quotes"
-
-    # When we click on the link with the text "New quote"
-    # we expect to land on a page with the title "New quote"
-    click_on "New quote"
-    assert_selector "h1", text: "New quote"
-
-    # When we fill in the name input with "Juanquex Quote"
-    # and we click on "Create Quote"
-    fill_in "Name", with: "Juanquex Quote"
-    click_on "Create quote"
-
-    # We expect to be back on the page with the title "Quotes"
-    # and to see our "Juanquex Quote" added to the list
-    assert_selector "h1", text: "Quotes"
-    assert_text "Juanquex Quote"
-  end
-
-  test "Showing a quote" do
+  test "showing a quote" do
     visit quotes_path
     click_link @quote.name
 
     assert_selector "h1", text: @quote.name
+  end
+
+  test "Creating a new quote" do
+    visit quotes_path
+    assert_selector "h1", text: "Quotes"
+
+    click_on "New quote"
+    fill_in "Name", with: "Juanequex Quote"
+
+    assert_selector "h1", text: "Quotes"
+    click_on "Create quote"
+
+    assert_selector "h1", text: "Quotes"
+    assert_text "Juanequex Quote"
   end
 
   test "Updating a quote" do
@@ -39,9 +31,9 @@ class QuotesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Quotes"
 
     click_on "Edit", match: :first
-    assert_selector "h1", text: "Edit quote"
-
     fill_in "Name", with: "Updated quote"
+
+    assert_selector "h1", text: "Quotes"
     click_on "Update quote"
 
     assert_selector "h1", text: "Quotes"
