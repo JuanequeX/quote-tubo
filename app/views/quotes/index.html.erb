@@ -4,6 +4,13 @@
     <%= link_to "New quote", new_quote_path, class: "btn btn--primary" %>
   </div>
 
-  <%= render @quotes %>
+  <% if @quotes.present? %>
+    <%= render @quotes %>
+
+  <% else %>
+    <div class="container-center">
+      <span>Write a quote</span>
+    </div>
+  <% end %>
 
 </main>
