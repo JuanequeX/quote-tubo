@@ -1,10 +1,11 @@
-# test/fixtures/quotes.yml
-
 first:
+  company: sumus
   name: First quote
 
 second:
+  company: sumus
   name: Second quote
 
 third:
+  company: wanabana
   name: Third quote
