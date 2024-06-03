@@ -4,7 +4,8 @@
 
 @import
   "./config/variables",
-  "./config/reset";
+  "./config/reset",
+  "./config/animation";
 
 @import
   "./layouts/header",
@@ -17,4 +18,5 @@
   "./components/error_message",
   "./components/visually_hidden",
   "./components/turbo_progress_bar",
-  "./components/navbar";
+  "./components/navbar",
+  "./components/flash";
